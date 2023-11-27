@@ -32,3 +32,5 @@ urlpatterns = [
 ]
 
 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns # new
+urlpatterns += staticfiles_urlpatterns() # new
