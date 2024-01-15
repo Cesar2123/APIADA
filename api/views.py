@@ -26,6 +26,11 @@ class About(APIView):
     template_name="about.html"
     def get(self, request):
         return render(request, self.template_name)
+
+class Catalogo(APIView):
+    template_name="shop.html"
+    def get(self, request):
+        return render(request, self.template_name)
     
 class Login(APIView):
     template_name="login_dul.html"
@@ -36,6 +41,7 @@ class Signin(APIView):
     template_name="signin.html"
     def get(self, request):
         return render(request, self.template_name)
+    
 class powerB(APIView):
     template_name="dashboard.html"
     def get(self, request):
@@ -109,5 +115,5 @@ def CheckOut(request):
         'product': '1',
         'paypal': paypal_payment
     }
-    return render(request,'payment.html', context)
+    return render(request,'carrito.html', context)
 

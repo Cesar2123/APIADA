@@ -16,17 +16,18 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from api.views import Home, About, powerB, Signin, CheckOut, success, cancel, inicio_ses, form_verificacion
+from api.views import Home, About, powerB, Signin, CheckOut, Catalogo, success, cancel, inicio_ses, form_verificacion
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home.as_view(), name='index'),
     path('about/', About.as_view(), name='about'),
+    path('catalogo/', Catalogo.as_view(), name='catalogo'),
     path('login/', inicio_ses, name='login'),
     path('signin/', Signin.as_view(), name='signin'),
     path('form/', form_verificacion, name='form'),
     path('dashboard/', powerB.as_view(), name='dashboard'),
-    path('payment/', CheckOut, name='payment'),
+    path('catalogo/payment/', CheckOut, name='payment'),
     path('cancel/', cancel, name='cancel'),
     path('success/', success, name='success')
 ]
